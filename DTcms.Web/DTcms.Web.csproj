@@ -24,6 +24,11 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -477,6 +482,7 @@
     <Content Include="templates\main\cart.html" />
     <Content Include="templates\main\content.html" />
     <Content Include="templates\main\css\flexslider.css" />
+    <Content Include="templates\main\css\layout.css" />
     <Content Include="templates\main\css\lightbox.css" />
     <Content Include="templates\main\css\style.css" />
     <Content Include="templates\main\down.html" />

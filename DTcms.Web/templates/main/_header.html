@@ -1,45 +1,65 @@
-﻿<div class="header">
-  <div class="header-wrap">
-    <div class="section">
-      <div class="left-box">
-        <a class="logo" href="<%linkurl("index")%>">{site.name}</a>
-        <p class="nav">
-          <a href="<%linkurl("news")%>">资讯</a>
-          <a href="<%linkurl("goods")%>">商城</a>
-          <a href="<%linkurl("video")%>">视频</a>
-          <a href="<%linkurl("photo")%>">图片</a>
-          <a href="<%linkurl("down")%>">下载</a>
-        </p>
-      </div>
-      <div class="search">
-        <input id="keywords" name="keywords" class="input" type="text" onkeydown="if(event.keyCode==13){SiteSearch('<%linkurl("search")%>', '#keywords');return false};" placeholder="输入回车搜索" x-webkit-speech="" />
-        <input class="submit" type="submit" onclick="SiteSearch('<%linkurl("search")%>', '#keywords');" value="搜索" />
-      </div>
-      <div class="right-box">
-      <script type="text/javascript">
-			$.ajax({
-				type: "POST",
-				url: "{config.webpath}tools/submit_ajax.ashx?action=user_check_login",
-				dataType: "json",
-				timeout: 20000,
-				success: function (data, textStatus) {
-					if (data.status == 1) {
-						$("#menu").prepend('<li class="line"><a href="<%linkurl("usercenter","exit")%>">退出</a></li>');
-						$("#menu").prepend('<li class="login"><em></em><a href="<%linkurl("usercenter","index")%>">会员中心</a></li>');
-					} else {
-						$("#menu").prepend('<li class="line"><a href="<%linkurl("register")%>">注册</a></li>');
-						$("#menu").prepend('<li class="login"><em></em><a href="<%linkurl("login")%>">登录</a></li>');
-					}
-				}
-			});
-		</script>
-        <ul id="menu">
-          <li>
-            <a href="<%linkurl("cart")%>">购物车<span id="shoppingCartCount"><script type="text/javascript" src="{config.webpath}tools/submit_ajax.ashx?action=view_cart_count"></script></span>件</a>
-          </li>
-          <li><a href="<%linkurl("content","contact")%>">联系我们</a></li>
-        </ul>
-      </div>
+﻿<div class="index-bg">
+    <div class="w1200 clearfix">
+        <div class="top">
+            <div class="you">
+                <div id="txt"></div>
+                <div class="search">
+                    <input id="keywords" name="keywords" class="input sousuo" type="text" onkeydown="if(event.keyCode==13){SiteSearch('<%linkurl("search")%>', '#keywords');return false};" placeholder="输入回车搜索" x-webkit-speech="" />
+                    <input class="submit" type="submit" onclick="SiteSearch('<%linkurl("search")%>', '#keywords');" value="搜索" style="border:none; background:none;"/>
+                </div>
+            </div>
+        </div>
+        <div class="logo">
+            <a href="/">
+                <img src="<%templateskin%>/images/logo.png" alt="">
+            </a>
+        </div>
+        <div class="head_r">
+            <ul>
+                <li class="active"><a href="<%linkurl("index")%>" title="首 页">首 页</a></li>
+                <li><a href="<%linkurl("about")%>" title="公司概况">公司概况</a></li>
+                <li><a href="<%linkurl("newscenter")%>" title="新闻中心">新闻中心</a></li>
+                <li><a href="<%linkurl("achieve")%>" title="经典业绩">经典业绩</a></li>
+                <li><a href="<%linkurl("culture")%>" title="企业文化">企业文化</a></li>
+                <li><a href="<%linkurl("server")%>" title="客户服务">客户服务</a></li>
+            </ul>
+        </div>
     </div>
-  </div>
 </div>
+<script>
+    $(function(){
+        startTime();
+    })
+    //获取当前系统日期
+    function startTime()
+    {
+        var today=new Date();
+        var y=today.getFullYear();   //获取完整的年份(4位,1970-????)
+        var mo=today.getMonth();      //获取当前月份(0-11,0代表1月)
+        var d=today.getDate();       //获取当前日(1-31)
+        var h=today.getHours();
+        var m=today.getMinutes();
+        var s=today.getSeconds();
+        var t=today.getDay();
+        //调用checkTime（）函数，小于十的数字前加0
+        y=checkTime(y);
+        mo=checkTime(mo+1);
+        d=checkTime(d);
+        m=checkTime(m);
+        s=checkTime(s);
+        t=checkTime(t);
+
+        //s设置层txt的内容
+        document.getElementById('txt').innerHTML=y+"年"+mo+"月"+d+"日"+"&nbsp;&nbsp;&nbsp;"+h+":"+m+"&nbsp;&nbsp;&nbsp;";
+        //过500毫秒再调用一次
+        t=setTimeout('startTime()',500);
+        //小于10，加0
+        function checkTime(i)
+        {
+            if(i<10)
+            {i="0"+i}
+            return i
+        }
+    }
+</script>
+

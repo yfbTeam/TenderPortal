@@ -9,8 +9,8 @@ override protected void OnInit(EventArgs e)
 {
 
 	/* 
-		This page was created by DTcms Template Engine at 2015/5/15 1:37:44.
-		本页面代码由DTcms模板引擎生成于 2015/5/15 1:37:44. 
+		This page was created by DTcms Template Engine at 2017/10/12 14:48:55.
+		本页面代码由DTcms模板引擎生成于 2017/10/12 14:48:55. 
 	*/
 
 	base.OnInit(e);
@@ -35,57 +35,34 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append("/js/cart.js\"></");
 	templateBuilder.Append("script>\r\n</head>\r\n\r\n<body>\r\n<!--Header-->\r\n");
 
-	templateBuilder.Append("<div class=\"header\">\r\n  <div class=\"header-wrap\">\r\n    <div class=\"section\">\r\n      <div class=\"left-box\">\r\n        <a class=\"logo\" href=\"");
+	templateBuilder.Append("<div class=\"index-bg\">\r\n    <div class=\"w1200 clearfix\">\r\n        <div class=\"top\">\r\n            <div class=\"you\">\r\n                <div id=\"txt\"></div>\r\n                <div class=\"search\">\r\n                    <input id=\"keywords\" name=\"keywords\" class=\"input sousuo\" type=\"text\" onkeydown=\"if(event.keyCode==13){SiteSearch('");
+	templateBuilder.Append(linkurl("search"));
+
+	templateBuilder.Append("', '#keywords');return false};\" placeholder=\"输入回车搜索\" x-webkit-speech=\"\" />\r\n                    <input class=\"submit\" type=\"submit\" onclick=\"SiteSearch('");
+	templateBuilder.Append(linkurl("search"));
+
+	templateBuilder.Append("', '#keywords');\" value=\"搜索\" style=\"border:none; background:none;\"/>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <div class=\"logo\">\r\n            <a href=\"/\">\r\n                <img src=\"");
+	templateBuilder.Append("/templates/main");
+	templateBuilder.Append("/images/logo.png\" alt=\"\">\r\n            </a>\r\n        </div>\r\n        <div class=\"head_r\">\r\n            <ul>\r\n                <li class=\"active\"><a href=\"");
 	templateBuilder.Append(linkurl("index"));
 
-	templateBuilder.Append("\">");
-	templateBuilder.Append(Utils.ObjectToStr(site.name));
-	templateBuilder.Append("</a>\r\n        <p class=\"nav\">\r\n          <a href=\"");
-	templateBuilder.Append(linkurl("news"));
+	templateBuilder.Append("\" title=\"首 页\">首 页</a></li>\r\n                <li><a href=\"");
+	templateBuilder.Append(linkurl("about"));
 
-	templateBuilder.Append("\">资讯</a>\r\n          <a href=\"");
-	templateBuilder.Append(linkurl("goods"));
+	templateBuilder.Append("\" title=\"公司概况\">公司概况</a></li>\r\n                <li><a href=\"");
+	templateBuilder.Append(linkurl("newscenter"));
 
-	templateBuilder.Append("\">商城</a>\r\n          <a href=\"");
-	templateBuilder.Append(linkurl("video"));
+	templateBuilder.Append("\" title=\"新闻中心\">新闻中心</a></li>\r\n                <li><a href=\"");
+	templateBuilder.Append(linkurl("achieve"));
 
-	templateBuilder.Append("\">视频</a>\r\n          <a href=\"");
-	templateBuilder.Append(linkurl("photo"));
+	templateBuilder.Append("\" title=\"经典业绩\">经典业绩</a></li>\r\n                <li><a href=\"");
+	templateBuilder.Append(linkurl("culture"));
 
-	templateBuilder.Append("\">图片</a>\r\n          <a href=\"");
-	templateBuilder.Append(linkurl("down"));
+	templateBuilder.Append("\" title=\"企业文化\">企业文化</a></li>\r\n                <li><a href=\"");
+	templateBuilder.Append(linkurl("server"));
 
-	templateBuilder.Append("\">下载</a>\r\n        </p>\r\n      </div>\r\n      <div class=\"search\">\r\n        <input id=\"keywords\" name=\"keywords\" class=\"input\" type=\"text\" onkeydown=\"if(event.keyCode==13){SiteSearch('");
-	templateBuilder.Append(linkurl("search"));
-
-	templateBuilder.Append("', '#keywords');return false};\" placeholder=\"输入回车搜索\" x-webkit-speech=\"\" />\r\n        <input class=\"submit\" type=\"submit\" onclick=\"SiteSearch('");
-	templateBuilder.Append(linkurl("search"));
-
-	templateBuilder.Append("', '#keywords');\" value=\"搜索\" />\r\n      </div>\r\n      <div class=\"right-box\">\r\n      <script type=\"text/javascript\">\r\n			$.ajax({\r\n				type: \"POST\",\r\n				url: \"");
-	templateBuilder.Append(Utils.ObjectToStr(config.webpath));
-	templateBuilder.Append("tools/submit_ajax.ashx?action=user_check_login\",\r\n				dataType: \"json\",\r\n				timeout: 20000,\r\n				success: function (data, textStatus) {\r\n					if (data.status == 1) {\r\n						$(\"#menu\").prepend('<li class=\"line\"><a href=\"");
-	templateBuilder.Append(linkurl("usercenter","exit"));
-
-	templateBuilder.Append("\">退出</a></li>');\r\n						$(\"#menu\").prepend('<li class=\"login\"><em></em><a href=\"");
-	templateBuilder.Append(linkurl("usercenter","index"));
-
-	templateBuilder.Append("\">会员中心</a></li>');\r\n					} else {\r\n						$(\"#menu\").prepend('<li class=\"line\"><a href=\"");
-	templateBuilder.Append(linkurl("register"));
-
-	templateBuilder.Append("\">注册</a></li>');\r\n						$(\"#menu\").prepend('<li class=\"login\"><em></em><a href=\"");
-	templateBuilder.Append(linkurl("login"));
-
-	templateBuilder.Append("\">登录</a></li>');\r\n					}\r\n				}\r\n			});\r\n		</");
-	templateBuilder.Append("script>\r\n        <ul id=\"menu\">\r\n          <li>\r\n            <a href=\"");
-	templateBuilder.Append(linkurl("cart"));
-
-	templateBuilder.Append("\">购物车<span id=\"shoppingCartCount\"><script type=\"text/javascript\" src=\"");
-	templateBuilder.Append(Utils.ObjectToStr(config.webpath));
-	templateBuilder.Append("tools/submit_ajax.ashx?action=view_cart_count\"></");
-	templateBuilder.Append("script></span>件</a>\r\n          </li>\r\n          <li><a href=\"");
-	templateBuilder.Append(linkurl("content","contact"));
-
-	templateBuilder.Append("\">联系我们</a></li>\r\n        </ul>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>");
+	templateBuilder.Append("\" title=\"客户服务\">客户服务</a></li>\r\n            </ul>\r\n        </div>\r\n    </div>\r\n</div>\r\n<script>\r\n    $(function(){\r\n        startTime();\r\n    })\r\n    //获取当前系统日期\r\n    function startTime()\r\n    {\r\n        var today=new Date();\r\n        var y=today.getFullYear();   //获取完整的年份(4位,1970-????)\r\n        var mo=today.getMonth();      //获取当前月份(0-11,0代表1月)\r\n        var d=today.getDate();       //获取当前日(1-31)\r\n        var h=today.getHours();\r\n        var m=today.getMinutes();\r\n        var s=today.getSeconds();\r\n        var t=today.getDay();\r\n        //调用checkTime（）函数，小于十的数字前加0\r\n        y=checkTime(y);\r\n        mo=checkTime(mo+1);\r\n        d=checkTime(d);\r\n        m=checkTime(m);\r\n        s=checkTime(s);\r\n        t=checkTime(t);\r\n\r\n        //s设置层txt的内容\r\n        document.getElementById('txt').innerHTML=y+\"年\"+mo+\"月\"+d+\"日\"+\"&nbsp;&nbsp;&nbsp;\"+h+\":\"+m+\"&nbsp;&nbsp;&nbsp;\";\r\n        //过500毫秒再调用一次\r\n        t=setTimeout('startTime()',500);\r\n        //小于10，加0\r\n        function checkTime(i)\r\n        {\r\n            if(i<10)\r\n            {i=\"0\"+i}\r\n            return i\r\n        }\r\n    }\r\n</");
+	templateBuilder.Append("script>\r\n\r\n");
 
 
 	templateBuilder.Append("\r\n<!--/Header-->\r\n  \r\n<div class=\"section clearfix\">\r\n  <div class=\"cart-box\">\r\n    <h1>我的购物车</h1>\r\n    <div class=\"cart-step\">\r\n      <ul>\r\n        <li class=\"selected\"><span>1</span>放进购物车</li>\r\n        <li><span>2</span>填写订单信息</li>\r\n        <li class=\"last\"><span>3</span>支付/确定订单</li>\r\n      </ul>\r\n    </div>\r\n  </div>\r\n  \r\n  <div class=\"line30\"></div>\r\n  <input id=\"jsondata\" name=\"jsondata\" type=\"hidden\" />\r\n  <table width=\"100%\" border=\"0\" align=\"center\" cellpadding=\"8\" cellspacing=\"0\" class=\"cart-table\">\r\n    <tr>\r\n      <th width=\"48\" align=\"center\"><a href=\"javascript:;\" onclick=\"selectCart(this);\">全选</a></th>\r\n      <th colspan=\"2\" align=\"left\">商品信息</th>\r\n      <th width=\"84\" align=\"left\">单价</th>\r\n      <th width=\"104\" align=\"center\">数量</th>\r\n      <th width=\"104\" align=\"left\">金额(元)</th>\r\n      <th width=\"84\" align=\"center\">积分</th>\r\n      <th width=\"54\" align=\"center\">操作</th>\r\n    </tr>\r\n    ");
@@ -158,44 +135,11 @@ override protected void OnInit(EventArgs e)
 
 	templateBuilder.Append("');\">立即结算</button>\r\n    </div>\r\n  </div>\r\n  <div class=\"clear\"></div>\r\n    \r\n</div>\r\n\r\n<!--Footer-->\r\n");
 
-	templateBuilder.Append("<div class=\"footer clearfix\">\r\n  <div class=\"foot-nav\">\r\n    <a target=\"_blank\" href=\"");
-	templateBuilder.Append(linkurl("index"));
-
-	templateBuilder.Append("\">首 页</a>|\r\n    <a target=\"_blank\" href=\"");
-	templateBuilder.Append(linkurl("content","about"));
-
-	templateBuilder.Append("\">关于我们</a>|\r\n    <a target=\"_blank\" href=\"");
-	templateBuilder.Append(linkurl("news"));
-
-	templateBuilder.Append("\">新闻资讯</a>|\r\n    <a target=\"_blank\" href=\"");
-	templateBuilder.Append(linkurl("goods"));
-
-	templateBuilder.Append("\">购物商城</a>|\r\n    <a target=\"_blank\" href=\"");
-	templateBuilder.Append(linkurl("video"));
-
-	templateBuilder.Append("\">视频专区</a>|\r\n    <a target=\"_blank\" href=\"");
-	templateBuilder.Append(linkurl("down"));
-
-	templateBuilder.Append("\">资源下载</a>|\r\n    <a target=\"_blank\" href=\"");
-	templateBuilder.Append(linkurl("photo"));
-
-	templateBuilder.Append("\">图片分享</a>|\r\n    <a target=\"_blank\" href=\"");
-	templateBuilder.Append(linkurl("feedback"));
-
-	templateBuilder.Append("\">留言反馈</a>|\r\n    <a target=\"_blank\" href=\"");
-	templateBuilder.Append(linkurl("link"));
-
-	templateBuilder.Append("\">友情链接</a>|\r\n    <a target=\"_blank\" href=\"");
-	templateBuilder.Append(linkurl("content","contact"));
-
-	templateBuilder.Append("\">联系我们</a>\r\n  </div>\r\n  <div class=\"copyright\">\r\n    <p>版权所有 ");
-	templateBuilder.Append(site.company.ToString());
-
-	templateBuilder.Append(" 粤ICP备11064298号 DTcms版本号：");
-	templateBuilder.Append(Utils.GetVersion().ToString());
-
-	templateBuilder.Append(" 旗舰版</p>\r\n    <p>Copyright &copy; 2009-2015 dtcms.net Corporation,All Rights Reserved.</p>\r\n    <p><script src=\"http://s24.cnzz.com/stat.php?id=1996164&web_id=1996164&show=pic\" language=\"javascript\"></");
-	templateBuilder.Append("script></p>\r\n  </div>\r\n</div>");
+	templateBuilder.Append("<div class=\"footer\">\r\n    <div class=\"w1200\">\r\n        <p>版权所有 ");
+	templateBuilder.Append(Utils.ObjectToStr(config.webcompany));
+	templateBuilder.Append(" ");
+	templateBuilder.Append(Utils.ObjectToStr(config.webcrod));
+	templateBuilder.Append("</p>\r\n    </div>\r\n</div>");
 
 
 	templateBuilder.Append("\r\n<!--/Footer-->\r\n</body>\r\n</html>");

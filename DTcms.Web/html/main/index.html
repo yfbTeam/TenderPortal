@@ -1,0 +1,295 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>招标</title>
+<meta name="keywords" content="招标" />
+<meta name="description" content="招标" />
+<link href="/templates/main/css/layout.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" charset="utf-8" src="/scripts/jquery/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="/templates/main/js/jquery.SuperSlide.js"></script>
+<script type="text/javascript" charset="utf-8" src="/templates/main/js/common.js"></script>
+</head>
+
+<body>
+<!--Header-->
+<div class="index-bg">
+    <div class="w1200 clearfix">
+        <div class="top">
+            <div class="you">
+                <div id="txt"></div>
+                <div class="search">
+                    <input id="keywords" name="keywords" class="input sousuo" type="text" onkeydown="if(event.keyCode==13){SiteSearch('/search.html', '#keywords');return false};" placeholder="输入回车搜索" x-webkit-speech="" />
+                    <input class="submit" type="submit" onclick="SiteSearch('/search.html', '#keywords');" value="搜索" style="border:none; background:none;"/>
+                </div>
+            </div>
+        </div>
+        <div class="logo">
+            <a href="/">
+                <img src="/templates/main/images/logo.png" alt="">
+            </a>
+        </div>
+        <div class="head_r">
+            <ul>
+                <li class="active"><a href="/index.html" title="首 页">首 页</a></li>
+                <li><a href="" title="公司概况">公司概况</a></li>
+                <li><a href="" title="新闻中心">新闻中心</a></li>
+                <li><a href="" title="经典业绩">经典业绩</a></li>
+                <li><a href="" title="企业文化">企业文化</a></li>
+                <li><a href="" title="客户服务">客户服务</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    $(function(){
+        startTime();
+    })
+    //获取当前系统日期
+    function startTime()
+    {
+        var today=new Date();
+        var y=today.getFullYear();   //获取完整的年份(4位,1970-????)
+        var mo=today.getMonth();      //获取当前月份(0-11,0代表1月)
+        var d=today.getDate();       //获取当前日(1-31)
+        var h=today.getHours();
+        var m=today.getMinutes();
+        var s=today.getSeconds();
+        var t=today.getDay();
+        //调用checkTime（）函数，小于十的数字前加0
+        y=checkTime(y);
+        mo=checkTime(mo+1);
+        d=checkTime(d);
+        m=checkTime(m);
+        s=checkTime(s);
+        t=checkTime(t);
+
+        //s设置层txt的内容
+        document.getElementById('txt').innerHTML=y+"年"+mo+"月"+d+"日"+"&nbsp;&nbsp;&nbsp;"+h+":"+m+"&nbsp;&nbsp;&nbsp;";
+        //过500毫秒再调用一次
+        t=setTimeout('startTime()',500);
+        //小于10，加0
+        function checkTime(i)
+        {
+            if(i<10)
+            {i="0"+i}
+            return i
+        }
+    }
+</script>
+
+
+<!--/Header-->
+<div class="aa">
+    <div class="main_serviceBox">
+        <div class="float">
+            <div class="banner-bg">
+                <object id="FlashID" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="1199" height="346">
+                    <param name="movie" value="/templates/main/images/hcjq.swf" />
+                    <param name="quality" value="high" />
+                    <param name="wmode" value="opaque" />
+                    <param name="swfversion" value="11.0.0.0" />
+                    <!-- 此 param 标签提示使用 Flash Player 6.0 r65 和更高版本的用户下载最新版本的 Flash Player。如果您不想让用户看到该提示，请将其删除。 -->
+                    <param name="expressinstall" value="swf/hcjq.swf" />
+                    <!-- 下一个对象标签用于非 IE 浏览器。所以使用 IECC 将其从 IE 隐藏。 -->
+                    <!--[if !IE]>-->
+                    <object type="application/x-shockwave-flash" data="/templates/main/images/hcjq.swf" width="1199" height="346">
+                        <!--<![endif]-->
+                        <param name="quality" value="high" />
+                        <param name="wmode" value="opaque" />
+                        <param name="swfversion" value="11.0.0.0" />
+                        <param name="expressinstall" value="/templates/main/images/hcjq.swf" />
+                        <!-- 浏览器将以下替代内容显示给使用 Flash Player 6.0 和更低版本的用户。 -->
+                        <div>
+                            <h4>此页面上的内容需要较新版本的 Adobe Flash Player。</h4>
+                            <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="获取 Adobe Flash Player" width="1199" height="346" /></a></p>
+                        </div>
+                        <!--[if !IE]>-->
+                    </object>
+                    <!--<![endif]-->
+                </object>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="wrap1">
+        <div class="w1200">
+            <div class="left">
+                <div class="title"><a>新闻中心</a></div>
+                <!-- 轮播-->
+                <div class="focusBox">
+                    <ul class="pic" >
+                        
+                        <!--使用foreach循环输出-->
+                        
+                        <li>
+                            <a href="" target="_blank" title="汇诚金桥十一周岁生日快乐！">
+                            
+                                <img src="/upload/201710/12/201710121359282505.jpg"  />
+                            
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="" target="_blank" title="汇诚金桥公司严正声明">
+                            
+                                <img src="/templates/main/images/logo.png" title="" />
+                            
+                            </a>
+                        </li>
+                        
+                    </ul>
+                    <div class="txt-bg"></div>
+                    <div class="txt">
+                        <ul>
+                            
+                            <!--使用foreach循环输出-->
+                            
+                            <li>
+                                <a href="" target="_blank" title="汇诚金桥十一周岁生日快乐！">
+                                    汇诚金桥十一周岁生日快乐！
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="" target="_blank" title="汇诚金桥公司严正声明">
+                                    汇诚金桥公司严正声明
+                                </a>
+                            </li>
+                            
+                           
+                        </ul>
+                    </div>
+                    <ul class="num">
+                            
+                            <!--使用foreach循环输出-->
+                            
+                            <li>
+                                <span>1</span>
+                            </li>
+                            
+                            <li>
+                                <span>2</span>
+                            </li>
+                            
+                    </ul>
+                </div>
+                <script type="text/javascript">
+                jQuery(".focusBox").slide({ titCell:".num li", mainCell:".pic",effect:"fold", autoPlay:true,trigger:"click",startFun:function(i){jQuery(".focusBox .txt li").eq(i).animate({"bottom":0}).siblings().animate({"bottom":-20});}});
+                </script>
+
+            </div>
+            <div class="right">
+                <ul id="tab">
+                    
+                    <li class="cur1">招标公告</li>
+                    
+                    <li>结果公告</li>
+                    
+                    <li>变更公告</li>
+                    
+                </ul>
+                <div id="cont1">
+                    <ul style="display:block;">
+                        <a href=""><div class="more">more</div></a>
+                        <ul class="list">
+                            
+                            <!--使用foreach循环输出-->
+                            
+                            <li><a href="" target="_blank" title="队史馆及影院装修工程招标公告">队史馆及影院装修工程招标公告</a></li>
+                            
+                        </ul>
+                    </ul>
+                    <ul>
+                        <a href=""><div class="more">more</div></a>
+                        <ul class="list">
+                            
+                            <!--使用foreach循环输出-->
+                            
+                            <li><a href="" target="_blank" title="流浪未成年人救助管理专业服务岗位项目成交结果公告">流浪未成年人救助管理专业服务岗位项目成交结果公告</a></li>
+                            
+                           
+                        </ul>
+                    </ul>
+                    <ul>
+                        <a href=""><div class="more">more</div></a>
+                        <ul class="list">
+                            
+                            <!--使用foreach循环输出-->
+                            
+                            <li><a href="" target="_blank" title="首都精神文明建设委员会办公室“2017北京榜样”大型主题活动宣传品项目更正公告（二次）">首都精神文明建设委员会办公室“2017北京榜样”大型主题活动宣传品项目更正公告（二次）</a></li>
+                            
+                           
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="w1300">
+            <ul>
+                <div class="gsxw"><div class="title"><a>新闻中心</a></div><a href=""><div class="more">more</div></a></div>
+                
+                <!--使用foreach循环输出-->
+                
+                <li><a href="" target="_blank" title="汇诚金桥十一周岁生日快乐！">汇诚金桥十一周岁生日快乐！</a></li>
+                
+                <li><a href="" target="_blank" title="汇诚金桥公司严正声明">汇诚金桥公司严正声明</a></li>
+                
+               
+            </ul>
+            <ul class="zxjd">
+                <div class="gsxw"><div class="title"><a>企业文化</a></div><a href=""><div class="more">more</div></a></div>
+                
+                <!--使用foreach循环输出-->
+                
+                <li><a href="" target="_blank" title="骑行游记">骑行游记</a></li>
+                
+               
+            </ul>
+            <ul>
+                <div class="gsxw"><div class="title"><a>成功案例</a></div><a href=""><div class="more">more</div></a></div>
+                
+                <!--使用foreach循环输出-->
+                
+                <li><a href="" target="_blank" title="第三届中国（北京）国际服务贸易交易会系列项目招标">第三届中国（北京）国际服务贸易交易会系列项目招标</a></li>
+                
+               
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <script>
+            $(function () {
+
+                var $tab = $('#tab li');
+                var $cont1 = $('#cont1>ul');
+
+                $tab.click(function () {
+                    var $this111 = $(this);
+                    var $t111 = $this111.index();
+                    $tab.removeClass();
+                    $this111.addClass('cur1');
+                    $cont1.css('display', 'none');
+                    $cont1.eq($t111).css('display', 'block');
+                })
+            })
+
+    </script>
+<!--Footer-->
+<div class="footer">
+    <div class="w1200">
+        <p>版权所有 深圳市动力启航软件有限公司 粤ICP备11064298号</p>
+    </div>
+</div>
+<!--/Footer-->
+
+<!-- Visual Studio Browser Link -->
+<script type="application/json" id="__browserLink_initializationData">
+    {"appName":"Unknown","requestId":"7d63bc9cf2f547d99e02385c3d16a63b"}
+</script>
+<script type="text/javascript" src="http://localhost:6524/49d944d74f9b4caf969728042f25f185/browserLink" async="async"></script>
+<!-- End Browser Link -->
+
+</body>
+</html>

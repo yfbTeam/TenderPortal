@@ -232,6 +232,7 @@ namespace DTcms.Web.UI
 
             StringBuilder sburl = new StringBuilder();
             DataTable dt = objarticle.GetList(channelname, 0, "", " id desc").Tables[0];
+            
             if (dt != null && dt.Rows.Count > 0)
             {
                 for (int i = 0; i < dt.Rows.Count; i++)

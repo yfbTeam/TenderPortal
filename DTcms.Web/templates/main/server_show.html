@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <%set string category_title=get_category_title(model.category_id,"客户服务")%>
+    <title>{model.title} - {category_title} - {site.name}</title>
+    <meta content="{model.seo_keywords}" name="keywords" />
+    <meta content="{model.seo_description}" name="description" />
+    <link href="<%templateskin%>/css/layout.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" charset="utf-8" src="{config.webpath}scripts/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="<%templateskin%>/js/common.js"></script>
+</head>
+
+<body>
+    <!--Header-->
+    <%template src="_header.html"%>
+    <!--/Header-->
+    <div class="banner"><img src="<%templateskin%>/images/20161114013920275.png" alt=""></div>
+    <div class="wrap1">
+        <div class="w1200 clearfix">
+            <div class="left1">
+                <div class="navtitle">客户服务</div>
+                <ul class="nav">
+                    <%set DataTable newsList=get_category_child_list("server",0)%>
+                    <%loop ncdr newsList%>
+                    <%if(ncdr__loop__id==1)%>
+                    <li class="active1"><a href="<%linkurl("server_list",{ncdr[id]})%>" title="{ncdr[title]}">{ncdr[title]}</a></li>
+                    <%else%>
+                    <li><a href="<%linkurl("server_list",{ncdr[id]})%>" title="{ncdr[title]}">{ncdr[title]}</a></li>
+                    <%/if%>
+                    <%/loop%>
+                </ul>
+            </div>
+            <div class="productr">
+                <p>客户服务<b><a href="<%linkurl("index")%>">首页</a> &gt; {category_title}</b></p>
+                <div class="world">
+                    <h2>{model.title}</h2>
+                    <em>
+                        作者：    时间：{model.add_time} 浏览：
+                        <script type="text/javascript" src="{config.webpath}tools/submit_ajax.ashx?action=view_article_click&id={model.id}&click=1"></script>次
+                    </em>
+                    <div>
+                        {model.content}
+                    </div>
+                    <div style="clear:both;"></div>
+                    <h4>
+                        <b>上一篇：<%=get_prevandnext_article("server_show", -1, "没有了", 0)%></b>
+                        <b>下一篇：<%=get_prevandnext_article("server_show", 1, "没有了", 0)%></b>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Footer-->
+    <%template src="_footer.html"%>
+    <!--/Footer-->
+</body>
+</html>

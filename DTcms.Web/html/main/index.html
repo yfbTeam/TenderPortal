@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>招标</title>
-<meta name="keywords" content="招标" />
-<meta name="description" content="招标" />
+<title>北京中天铭泽招标代理有限公司</title>
+<meta name="keywords" content="北京中天铭泽招标代理有限公司" />
+<meta name="description" content="北京中天铭泽招标代理有限公司" />
 <link href="/templates/main/css/layout.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" charset="utf-8" src="/scripts/jquery/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" charset="utf-8" src="/templates/main/js/jquery.SuperSlide.js"></script>
@@ -18,10 +18,10 @@
         <div class="top">
             <div class="you">
                 <div id="txt"></div>
-                <div class="search">
+                <!--<div class="search">
                     <input id="keywords" name="keywords" class="input sousuo" type="text" onkeydown="if(event.keyCode==13){SiteSearch('/search.html', '#keywords');return false};" placeholder="输入回车搜索" x-webkit-speech="" />
                     <input class="submit" type="submit" onclick="SiteSearch('/search.html', '#keywords');" value="搜索" style="border:none; background:none;"/>
-                </div>
+                </div>-->
             </div>
         </div>
         <div class="logo">
@@ -32,11 +32,12 @@
         <div class="head_r">
             <ul>
                 <li class="active"><a href="/index.html" title="首 页">首 页</a></li>
-                <li><a href="" title="公司概况">公司概况</a></li>
-                <li><a href="" title="新闻中心">新闻中心</a></li>
-                <li><a href="" title="经典业绩">经典业绩</a></li>
-                <li><a href="" title="企业文化">企业文化</a></li>
-                <li><a href="" title="客户服务">客户服务</a></li>
+                <li><a href="/about/65.html" title="公司概况">公司概况</a></li>
+                <li><a href="/newscenter/52.html" title="新闻中心">新闻中心</a></li>
+                <li><a href="/mes/53.html" title="招标信息">招标信息</a></li>
+                <li><a href="/achieve/60.html" title="经典业绩">经典业绩</a></li>
+                <li><a href="/culture/57.html" title="企业文化">企业文化</a></li>
+                <li><a href="/server/61.html" title="客户服务">客户服务</a></li>
             </ul>
         </div>
     </div>
@@ -44,6 +45,16 @@
 <script>
     $(function(){
         startTime();
+        var href = window.location.href,host = window.location.host;
+        $('.head_r ul li').each(function () {
+            itemhref = $(this).children('a').attr('href');
+            itemhref = itemhref.slice(host);
+            itemhref = itemhref.slice(0,itemhref.lastIndexOf('/'))
+           
+            if (href.indexOf(itemhref) > 1) {
+                $(this).addClass('active').siblings().removeClass('active');
+            }
+        })
     })
     //获取当前系统日期
     function startTime()
@@ -123,17 +134,17 @@
                         <!--使用foreach循环输出-->
                         
                         <li>
-                            <a href="" target="_blank" title="汇诚金桥十一周岁生日快乐！">
+                            <a href="/newscenter/52/show-119.html" target="_blank" title="啊啊啊">
                             
-                                <img src="/upload/201710/12/201710121359282505.jpg"  />
+                                <img src="/templates/main/images/logo.png" title="" />
                             
                             </a>
                         </li>
                         
                         <li>
-                            <a href="" target="_blank" title="汇诚金桥公司严正声明">
+                            <a href="/newscenter/52/show-103.html" target="_blank" title="汇诚金桥十一周岁生日快乐！">
                             
-                                <img src="/templates/main/images/logo.png" title="" />
+                                <img src="/upload/201710/12/201710121359282505.jpg"  />
                             
                             </a>
                         </li>
@@ -146,14 +157,14 @@
                             <!--使用foreach循环输出-->
                             
                             <li>
-                                <a href="" target="_blank" title="汇诚金桥十一周岁生日快乐！">
-                                    汇诚金桥十一周岁生日快乐！
+                                <a href="/newscenter/52/show-119.html" target="_blank" title="啊啊啊">
+                                    啊啊啊
                                 </a>
                             </li>
                             
                             <li>
-                                <a href="" target="_blank" title="汇诚金桥公司严正声明">
-                                    汇诚金桥公司严正声明
+                                <a href="/newscenter/52/show-103.html" target="_blank" title="汇诚金桥十一周岁生日快乐！">
+                                    汇诚金桥十一周岁生日快乐！
                                 </a>
                             </li>
                             
@@ -191,33 +202,33 @@
                 </ul>
                 <div id="cont1">
                     <ul style="display:block;">
-                        <a href=""><div class="more">more</div></a>
+                        <a href="/mes/53.html" target="_blank"><div class="more">more</div></a>
                         <ul class="list">
                             
                             <!--使用foreach循环输出-->
                             
-                            <li><a href="" target="_blank" title="队史馆及影院装修工程招标公告">队史馆及影院装修工程招标公告</a></li>
+                            <li><a href="/newscenter/53/show-104.html" target="_blank" title="队史馆及影院装修工程招标公告">队史馆及影院装修工程招标公告</a></li>
                             
                         </ul>
                     </ul>
                     <ul>
-                        <a href=""><div class="more">more</div></a>
+                        <a href="/mes/54.html" target="_blank"><div class="more">more</div></a>
                         <ul class="list">
                             
                             <!--使用foreach循环输出-->
                             
-                            <li><a href="" target="_blank" title="流浪未成年人救助管理专业服务岗位项目成交结果公告">流浪未成年人救助管理专业服务岗位项目成交结果公告</a></li>
+                            <li><a href="/newscenter/54/show-105.html" target="_blank" title="流浪未成年人救助管理专业服务岗位项目成交结果公告">流浪未成年人救助管理专业服务岗位项目成交结果公告</a></li>
                             
                            
                         </ul>
                     </ul>
                     <ul>
-                        <a href=""><div class="more">more</div></a>
+                        <a href="/mes/55.html" target="_blank"><div class="more">more</div></a>
                         <ul class="list">
                             
                             <!--使用foreach循环输出-->
                             
-                            <li><a href="" target="_blank" title="首都精神文明建设委员会办公室“2017北京榜样”大型主题活动宣传品项目更正公告（二次）">首都精神文明建设委员会办公室“2017北京榜样”大型主题活动宣传品项目更正公告（二次）</a></li>
+                            <li><a href="/newscenter/55/show-106.html" target="_blank" title="首都精神文明建设委员会办公室“2017北京榜样”大型主题活动宣传品项目更正公告（二次）">首都精神文明建设委员会办公室“2017北京榜样”大型主题活动宣传品项目更正公告（二次）</a></li>
                             
                            
                         </ul>
@@ -228,31 +239,31 @@
         <div class="clear"></div>
         <div class="w1300">
             <ul>
-                <div class="gsxw"><div class="title"><a>新闻中心</a></div><a href=""><div class="more">more</div></a></div>
+                <div class="gsxw"><div class="title"><a>新闻中心</a></div><a href="/newscenter/52.html"><div class="more">more</div></a></div>
                 
                 <!--使用foreach循环输出-->
                 
-                <li><a href="" target="_blank" title="汇诚金桥十一周岁生日快乐！">汇诚金桥十一周岁生日快乐！</a></li>
+                <li><a href="/newscenter/52/show-119.html" target="_blank" title="啊啊啊">啊啊啊</a></li>
                 
-                <li><a href="" target="_blank" title="汇诚金桥公司严正声明">汇诚金桥公司严正声明</a></li>
+                <li><a href="/newscenter/52/show-103.html" target="_blank" title="汇诚金桥十一周岁生日快乐！">汇诚金桥十一周岁生日快乐！</a></li>
                 
                
             </ul>
             <ul class="zxjd">
-                <div class="gsxw"><div class="title"><a>企业文化</a></div><a href=""><div class="more">more</div></a></div>
+                <div class="gsxw"><div class="title"><a>企业文化</a></div><a href="/culture/53.html"><div class="more">more</div></a></div>
                 
                 <!--使用foreach循环输出-->
                 
-                <li><a href="" target="_blank" title="骑行游记">骑行游记</a></li>
+                <li><a href="/culture/57/show-107.html" target="_blank" title="骑行游记">骑行游记</a></li>
                 
                
             </ul>
             <ul>
-                <div class="gsxw"><div class="title"><a>成功案例</a></div><a href=""><div class="more">more</div></a></div>
+                <div class="gsxw"><div class="title"><a>成功案例</a></div><a href="/achieve/59.html"><div class="more">more</div></a></div>
                 
                 <!--使用foreach循环输出-->
                 
-                <li><a href="" target="_blank" title="第三届中国（北京）国际服务贸易交易会系列项目招标">第三届中国（北京）国际服务贸易交易会系列项目招标</a></li>
+                <li><a href="/achieve/59/show-108.html" target="_blank" title="第三届中国（北京）国际服务贸易交易会系列项目招标">第三届中国（北京）国际服务贸易交易会系列项目招标</a></li>
                 
                
             </ul>
@@ -279,16 +290,16 @@
 <!--Footer-->
 <div class="footer">
     <div class="w1200">
-        <p>版权所有 深圳市动力启航软件有限公司 粤ICP备11064298号</p>
+        <p>版权所有 北京中天铭泽招标代理有限公司 </p>
     </div>
 </div>
 <!--/Footer-->
 
 <!-- Visual Studio Browser Link -->
 <script type="application/json" id="__browserLink_initializationData">
-    {"appName":"Unknown","requestId":"7d63bc9cf2f547d99e02385c3d16a63b"}
+    {"appName":"Unknown","requestId":"fee7f6833c3e401bbf76b671d9b31e85"}
 </script>
-<script type="text/javascript" src="http://localhost:6524/49d944d74f9b4caf969728042f25f185/browserLink" async="async"></script>
+<script type="text/javascript" src="http://localhost:49520/2a41103733d64d83a6a1fe3c70bd74c0/browserLink" async="async"></script>
 <!-- End Browser Link -->
 
 </body>

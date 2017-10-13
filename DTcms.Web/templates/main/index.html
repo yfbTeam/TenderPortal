@@ -58,7 +58,7 @@
                         <!--使用foreach循环输出-->
                         <%foreach(DataRow dr in nlist.Rows)%>
                         <li>
-                            <a href="<%linkurl("newscenter_show",{dr[id]})%>" target="_blank" title="{dr[title]}">
+                            <a href="<%linkurl("newscenter_show",{dr[category_id]},{dr[id]})%>" target="_blank" title="{dr[title]}">
                             <%if({dr[img_url]}!="")%>
                                 <img src="{dr[img_url]}"  />
                             <%else%>
@@ -75,7 +75,7 @@
                             <!--使用foreach循环输出-->
                             <%foreach(DataRow dr in nlist1.Rows)%>
                             <li>
-                                <a href="<%linkurl("newscenter_show",{dr[id]})%>" target="_blank" title="{dr[title]}">
+                                <a href="<%linkurl("newscenter_show",{dr[category_id]},{dr[id]})%>" target="_blank" title="{dr[title]}">
                                     {dr[title]}
                                 </a>
                             </li>
@@ -111,33 +111,33 @@
                 </ul>
                 <div id="cont1">
                     <ul style="display:block;">
-                        <a href=""><div class="more">more</div></a>
+                        <a href="<%linkurl("mes_list",53)%>" target="_blank"><div class="more">more</div></a>
                         <ul class="list">
                             <%set DataTable mesList1=get_article_list("mes",53, 6, "status=0")%>
                             <!--使用foreach循环输出-->
                             <%foreach(DataRow dr in mesList1.Rows)%>
-                            <li><a href="" target="_blank" title="{dr[title]}">{dr[title]}</a></li>
+                            <li><a href="<%linkurl("newscenter_show",{dr[category_id]},{dr[id]})%>" target="_blank" title="{dr[title]}">{dr[title]}</a></li>
                             <%/foreach%>
                         </ul>
                     </ul>
                     <ul>
-                        <a href=""><div class="more">more</div></a>
+                        <a href="<%linkurl("mes_list",54)%>" target="_blank"><div class="more">more</div></a>
                         <ul class="list">
                             <%set DataTable mesList2=get_article_list("mes",54, 6, "status=0")%>
                             <!--使用foreach循环输出-->
                             <%foreach(DataRow dr in mesList2.Rows)%>
-                            <li><a href="" target="_blank" title="{dr[title]}">{dr[title]}</a></li>
+                            <li><a href="<%linkurl("newscenter_show",{dr[category_id]},{dr[id]})%>" target="_blank" title="{dr[title]}">{dr[title]}</a></li>
                             <%/foreach%>
                            
                         </ul>
                     </ul>
                     <ul>
-                        <a href=""><div class="more">more</div></a>
+                        <a href="<%linkurl("mes_list",55)%>" target="_blank"><div class="more">more</div></a>
                         <ul class="list">
                             <%set DataTable mesList3=get_article_list("mes",55, 6, "status=0")%>
                             <!--使用foreach循环输出-->
                             <%foreach(DataRow dr in mesList3.Rows)%>
-                            <li><a href="" target="_blank" title="{dr[title]}">{dr[title]}</a></li>
+                            <li><a href="<%linkurl("newscenter_show",{dr[category_id]},{dr[id]})%>" target="_blank" title="{dr[title]}">{dr[title]}</a></li>
                             <%/foreach%>
                            
                         </ul>
@@ -148,29 +148,29 @@
         <div class="clear"></div>
         <div class="w1300">
             <ul>
-                <div class="gsxw"><div class="title"><a>新闻中心</a></div><a href=""><div class="more">more</div></a></div>
+                <div class="gsxw"><div class="title"><a>新闻中心</a></div><a href="<%linkurl("newscenter_list",52)%>"><div class="more">more</div></a></div>
                 <%set DataTable nlist4=get_article_list("newscenter", 6, "status=0")%>
                 <!--使用foreach循环输出-->
                 <%foreach(DataRow dr in nlist4.Rows)%>
-                <li><a href="<%linkurl("newscenter_show",{dr[id]})%>" target="_blank" title="{dr[title]}">{dr[title]}</a></li>
+                <li><a href="<%linkurl("newscenter_show",{dr[category_id]},{dr[id]})%>" target="_blank" title="{dr[title]}">{dr[title]}</a></li>
                 <%/foreach%>
                
             </ul>
             <ul class="zxjd">
-                <div class="gsxw"><div class="title"><a>企业文化</a></div><a href=""><div class="more">more</div></a></div>
+                <div class="gsxw"><div class="title"><a>企业文化</a></div><a href="<%linkurl("culture_list",53)%>"><div class="more">more</div></a></div>
                 <%set DataTable cultureList=get_article_list("culture", 6, "status=0")%>
                 <!--使用foreach循环输出-->
                 <%foreach(DataRow dr in cultureList.Rows)%>
-                <li><a href="<%linkurl("culture_show",{dr[id]})%>" target="_blank" title="{dr[title]}">{dr[title]}</a></li>
+                <li><a href="<%linkurl("culture_show",{dr[category_id]},{dr[id]})%>" target="_blank" title="{dr[title]}">{dr[title]}</a></li>
                 <%/foreach%>
                
             </ul>
             <ul>
-                <div class="gsxw"><div class="title"><a>成功案例</a></div><a href=""><div class="more">more</div></a></div>
-                <%set DataTable achieveList=get_article_list("achieve", 6, "status=0")%>
+                <div class="gsxw"><div class="title"><a>成功案例</a></div><a href="<%linkurl("achieve_list",59)%>"><div class="more">more</div></a></div>
+                <%set DataTable achieveList=get_article_list("achieve",59, 6, "status=0")%>
                 <!--使用foreach循环输出-->
                 <%foreach(DataRow dr in achieveList.Rows)%>
-                <li><a href="<%linkurl("achieve_show",{dr[id]})%>" target="_blank" title="{dr[title]}">{dr[title]}</a></li>
+                <li><a href="<%linkurl("achieve_show",{dr[category_id]},{dr[id]})%>" target="_blank" title="{dr[title]}">{dr[title]}</a></li>
                 <%/foreach%>
                
             </ul>

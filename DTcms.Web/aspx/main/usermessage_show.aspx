@@ -9,8 +9,8 @@ override protected void OnInit(EventArgs e)
 {
 
 	/* 
-		This page was created by DTcms Template Engine at 2017/10/12 14:48:56.
-		本页面代码由DTcms模板引擎生成于 2017/10/12 14:48:56. 
+		This page was created by DTcms Template Engine at 2017/10/13 15:04:37.
+		本页面代码由DTcms模板引擎生成于 2017/10/13 15:04:37. 
 	*/
 
 	base.OnInit(e);
@@ -37,108 +37,41 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append("/js/common.js\"></");
 	templateBuilder.Append("script>\r\n</head>\r\n\r\n<body>\r\n<!--Header-->\r\n");
 
-	templateBuilder.Append("<div class=\"index-bg\">\r\n    <div class=\"w1200 clearfix\">\r\n        <div class=\"top\">\r\n            <div class=\"you\">\r\n                <div id=\"txt\"></div>\r\n                <div class=\"search\">\r\n                    <input id=\"keywords\" name=\"keywords\" class=\"input sousuo\" type=\"text\" onkeydown=\"if(event.keyCode==13){SiteSearch('");
+	templateBuilder.Append("<div class=\"index-bg\">\r\n    <div class=\"w1200 clearfix\">\r\n        <div class=\"top\">\r\n            <div class=\"you\">\r\n                <div id=\"txt\"></div>\r\n                <!--<div class=\"search\">\r\n                    <input id=\"keywords\" name=\"keywords\" class=\"input sousuo\" type=\"text\" onkeydown=\"if(event.keyCode==13){SiteSearch('");
 	templateBuilder.Append(linkurl("search"));
 
 	templateBuilder.Append("', '#keywords');return false};\" placeholder=\"输入回车搜索\" x-webkit-speech=\"\" />\r\n                    <input class=\"submit\" type=\"submit\" onclick=\"SiteSearch('");
 	templateBuilder.Append(linkurl("search"));
 
-	templateBuilder.Append("', '#keywords');\" value=\"搜索\" style=\"border:none; background:none;\"/>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <div class=\"logo\">\r\n            <a href=\"/\">\r\n                <img src=\"");
+	templateBuilder.Append("', '#keywords');\" value=\"搜索\" style=\"border:none; background:none;\"/>\r\n                </div>-->\r\n            </div>\r\n        </div>\r\n        <div class=\"logo\">\r\n            <a href=\"/\">\r\n                <img src=\"");
 	templateBuilder.Append("/templates/main");
 	templateBuilder.Append("/images/logo.png\" alt=\"\">\r\n            </a>\r\n        </div>\r\n        <div class=\"head_r\">\r\n            <ul>\r\n                <li class=\"active\"><a href=\"");
 	templateBuilder.Append(linkurl("index"));
 
 	templateBuilder.Append("\" title=\"首 页\">首 页</a></li>\r\n                <li><a href=\"");
-	templateBuilder.Append(linkurl("about"));
+	templateBuilder.Append(linkurl("about_list",65));
 
 	templateBuilder.Append("\" title=\"公司概况\">公司概况</a></li>\r\n                <li><a href=\"");
-	templateBuilder.Append(linkurl("newscenter"));
+	templateBuilder.Append(linkurl("newscenter_list",52));
 
 	templateBuilder.Append("\" title=\"新闻中心\">新闻中心</a></li>\r\n                <li><a href=\"");
-	templateBuilder.Append(linkurl("achieve"));
+	templateBuilder.Append(linkurl("mes_list",53));
+
+	templateBuilder.Append("\" title=\"招标信息\">招标信息</a></li>\r\n                <li><a href=\"");
+	templateBuilder.Append(linkurl("achieve_list",60));
 
 	templateBuilder.Append("\" title=\"经典业绩\">经典业绩</a></li>\r\n                <li><a href=\"");
-	templateBuilder.Append(linkurl("culture"));
+	templateBuilder.Append(linkurl("culture_list",57));
 
 	templateBuilder.Append("\" title=\"企业文化\">企业文化</a></li>\r\n                <li><a href=\"");
-	templateBuilder.Append(linkurl("server"));
+	templateBuilder.Append(linkurl("server_list",61));
 
-	templateBuilder.Append("\" title=\"客户服务\">客户服务</a></li>\r\n            </ul>\r\n        </div>\r\n    </div>\r\n</div>\r\n<script>\r\n    $(function(){\r\n        startTime();\r\n    })\r\n    //获取当前系统日期\r\n    function startTime()\r\n    {\r\n        var today=new Date();\r\n        var y=today.getFullYear();   //获取完整的年份(4位,1970-????)\r\n        var mo=today.getMonth();      //获取当前月份(0-11,0代表1月)\r\n        var d=today.getDate();       //获取当前日(1-31)\r\n        var h=today.getHours();\r\n        var m=today.getMinutes();\r\n        var s=today.getSeconds();\r\n        var t=today.getDay();\r\n        //调用checkTime（）函数，小于十的数字前加0\r\n        y=checkTime(y);\r\n        mo=checkTime(mo+1);\r\n        d=checkTime(d);\r\n        m=checkTime(m);\r\n        s=checkTime(s);\r\n        t=checkTime(t);\r\n\r\n        //s设置层txt的内容\r\n        document.getElementById('txt').innerHTML=y+\"年\"+mo+\"月\"+d+\"日\"+\"&nbsp;&nbsp;&nbsp;\"+h+\":\"+m+\"&nbsp;&nbsp;&nbsp;\";\r\n        //过500毫秒再调用一次\r\n        t=setTimeout('startTime()',500);\r\n        //小于10，加0\r\n        function checkTime(i)\r\n        {\r\n            if(i<10)\r\n            {i=\"0\"+i}\r\n            return i\r\n        }\r\n    }\r\n</");
+	templateBuilder.Append("\" title=\"客户服务\">客户服务</a></li>\r\n            </ul>\r\n        </div>\r\n    </div>\r\n</div>\r\n<script>\r\n    $(function(){\r\n        startTime();\r\n        var href = window.location.href,host = window.location.host;\r\n        $('.head_r ul li').each(function () {\r\n            itemhref = $(this).children('a').attr('href');\r\n            itemhref = itemhref.slice(host);\r\n            itemhref = itemhref.slice(0,itemhref.lastIndexOf('/'))\r\n           \r\n            if (href.indexOf(itemhref) > 1) {\r\n                $(this).addClass('active').siblings().removeClass('active');\r\n            }\r\n        })\r\n    })\r\n    //获取当前系统日期\r\n    function startTime()\r\n    {\r\n        var today=new Date();\r\n        var y=today.getFullYear();   //获取完整的年份(4位,1970-????)\r\n        var mo=today.getMonth();      //获取当前月份(0-11,0代表1月)\r\n        var d=today.getDate();       //获取当前日(1-31)\r\n        var h=today.getHours();\r\n        var m=today.getMinutes();\r\n        var s=today.getSeconds();\r\n        var t=today.getDay();\r\n        //调用checkTime（）函数，小于十的数字前加0\r\n        y=checkTime(y);\r\n        mo=checkTime(mo+1);\r\n        d=checkTime(d);\r\n        m=checkTime(m);\r\n        s=checkTime(s);\r\n        t=checkTime(t);\r\n\r\n        //s设置层txt的内容\r\n        document.getElementById('txt').innerHTML=y+\"年\"+mo+\"月\"+d+\"日\"+\"&nbsp;&nbsp;&nbsp;\"+h+\":\"+m+\"&nbsp;&nbsp;&nbsp;\";\r\n        //过500毫秒再调用一次\r\n        t=setTimeout('startTime()',500);\r\n        //小于10，加0\r\n        function checkTime(i)\r\n        {\r\n            if(i<10)\r\n            {i=\"0\"+i}\r\n            return i\r\n        }\r\n    }\r\n</");
 	templateBuilder.Append("script>\r\n\r\n");
 
 
 	templateBuilder.Append("\r\n<!--/Header-->\r\n\r\n<div class=\"section clearfix\">\r\n  <div class=\"line30\"></div>\r\n\r\n  <div class=\"info-wrap\">\r\n    <!--左侧导航-->\r\n    ");
 
-	templateBuilder.Append("    <div class=\"info-box\">\r\n      <div class=\"avatar-box\">\r\n        <a href=\"");
-	templateBuilder.Append(linkurl("usercenter","avatar"));
-
-	templateBuilder.Append("\" class=\"img-box\">\r\n          ");
-	if (userModel.avatar!="")
-	{
-
-	templateBuilder.Append("\r\n            <img src=\"");
-	templateBuilder.Append(Utils.ObjectToStr(userModel.avatar));
-	templateBuilder.Append("\" />\r\n          ");
-	}
-	else
-	{
-
-	templateBuilder.Append("\r\n            <img src=\"");
-	templateBuilder.Append("/templates/main");
-	templateBuilder.Append("/images/user-avatar.png\" />\r\n          ");
-	}	//end for if
-
-	templateBuilder.Append("\r\n        </a>\r\n        <h3>\r\n        ");
-	if (userModel.nick_name!="")
-	{
-
-	templateBuilder.Append("\r\n          ");
-	templateBuilder.Append(Utils.ObjectToStr(userModel.nick_name));
-	templateBuilder.Append("\r\n        ");
-	}
-	else
-	{
-
-	templateBuilder.Append("\r\n          ");
-	templateBuilder.Append(Utils.ObjectToStr(userModel.user_name));
-	templateBuilder.Append("\r\n        ");
-	}	//end for if
-
-	templateBuilder.Append("\r\n        </h3>\r\n        <p>余额：");
-	templateBuilder.Append(Utils.ObjectToStr(userModel.amount));
-	templateBuilder.Append(" 元</p>\r\n        <p>积分：");
-	templateBuilder.Append(Utils.ObjectToStr(userModel.point));
-	templateBuilder.Append(" 分</p>					\r\n      </div>\r\n      <ul class=\"side-nav\">\r\n        <li>\r\n          <a href=\"");
-	templateBuilder.Append(linkurl("userorder","list"));
-
-	templateBuilder.Append("\">订单管理</a>\r\n          <a href=\"");
-	templateBuilder.Append(linkurl("userorder","close"));
-
-	templateBuilder.Append("\">已关闭订单</a>\r\n        </li>\r\n        <li>\r\n          <a href=\"");
-	templateBuilder.Append(linkurl("useramount","recharge"));
-
-	templateBuilder.Append("\">账户余额</a>\r\n          <a href=\"");
-	templateBuilder.Append(linkurl("userpoint","convert"));
-
-	templateBuilder.Append("\">我的积分</a>\r\n          <a href=\"");
-	templateBuilder.Append(linkurl("usermessage","system"));
-
-	templateBuilder.Append("\">站内消息</a>\r\n          <a href=\"");
-	templateBuilder.Append(linkurl("usercenter","invite"));
-
-	templateBuilder.Append("\">邀请好友</a>\r\n        </li>\r\n        <li>\r\n          \r\n          <a href=\"");
-	templateBuilder.Append(linkurl("usercenter","proinfo"));
-
-	templateBuilder.Append("\">个人资料</a>\r\n          <a href=\"");
-	templateBuilder.Append(linkurl("usercenter","avatar"));
-
-	templateBuilder.Append("\">头像设置</a>\r\n          <a href=\"");
-	templateBuilder.Append(linkurl("usercenter","password"));
-
-	templateBuilder.Append("\">修改密码</a>\r\n          <a href=\"");
-	templateBuilder.Append(linkurl("usercenter","exit"));
-
-	templateBuilder.Append("\">退出登录</a>\r\n        </li>\r\n      </ul>\r\n    </div>");
 
 
 	templateBuilder.Append("\r\n    <!--/左侧导航-->\r\n    \r\n    <!--右侧内容-->\r\n    <div class=\"home-box\">\r\n      <!--系统消息-->\r\n      <div class=\"u-tab-head\">\r\n        <p>\r\n          ");

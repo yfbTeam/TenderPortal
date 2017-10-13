@@ -26,13 +26,13 @@ img,h1,p,div,ul,li,a,dl,dt,dd,table,tr,td { margin:0; padding:0; border:0; list-
 
 
 /*公共头部*/
-.top{width: 587px;height: 53px;background: url("../images/top-bg.png") no-repeat;float: right;margin-right: 10px; color: #666666;}
-.you{position: relative;margin-left: 80px;}
+.top{width: 587px;height: 53px;float: right;margin-right: 10px; color: #666666;}
+.you{position: relative;width: 240px;height: 53px;float:right;background: url("../images/top-bg.png") no-repeat;background-size:100% 53px;}
 .you a{color: #666666;}
 .wrap{width: 1200px;height: 120px;margin: auto;}
 .logo {line-height: 85px;font-size: 24px;color: #4d4d4d;float: left;margin-bottom: 20px;}
 .logo img{float: left;margin-top: 30px;}
-#txt{color: #666;float: left;line-height: 40px;}
+#txt{color: #666;text-indent:55px;line-height: 40px;}
 .index-bg{background: #e9e9e9;width: 100%;}
 .sousuo{width: 150px;height: 25px;background: url("../images/fdj.png") left center no-repeat #e5e5e7;padding-left: 30px;border-radius: 15px;border: none;
     border: 1px solid #d0d0d2;background-position: 10px;margin-top: 7px;box-shadow:4px 4px 5px #d0d0d2 inset;outline: none;margin-left: 60px;
@@ -83,7 +83,7 @@ img,h1,p,div,ul,li,a,dl,dt,dd,table,tr,td { margin:0; padding:0; border:0; list-
 .gsxw{border-bottom: 1px dashed #dddcda;height: 30px;}
 
 .navtitle{width: 230px;height: 60px;background: #881e21;font-size: 20px;line-height: 60px;padding-left: 20px;color: #ffffff;}
-.nav li{width: 230px;height: 40px;background:url(".../images/nav-bg1.png") left center no-repeat;line-height: 40px;padding-left: 30px;color: #333333;font-size: 16px;}
+.nav li{width: 230px;height: 40px;background:url("../images/nav-bg1.png") left center no-repeat;line-height: 40px;padding-left: 30px;color: #333333;font-size: 16px;}
 .nav li a{color: #333333;}
 .active1 a{color: #881e21!important;}
 

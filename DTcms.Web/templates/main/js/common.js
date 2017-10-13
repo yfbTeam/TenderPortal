@@ -1,4 +1,16 @@
-﻿/* 
+﻿$(function () {
+    var href = window.location.href, host = window.location.host;
+    $('.nav li').each(function () {
+        itemhref = $(this).children('a').attr('href');
+        itemhref = itemhref.slice(host);
+        itemhref = itemhref.slice(0, itemhref.lastIndexOf('.'))
+        if (href.indexOf(itemhref) > 1) {
+            $(this).addClass('active1').siblings().removeClass('active1');
+        }
+    })
+})
+
+/* 
 *作者：一些事情
 *时间：2015-4-17
 *需要结合jquery和Validform和artdialog一起使用

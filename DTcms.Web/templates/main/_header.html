@@ -3,10 +3,10 @@
         <div class="top">
             <div class="you">
                 <div id="txt"></div>
-                <div class="search">
+                <!--<div class="search">
                     <input id="keywords" name="keywords" class="input sousuo" type="text" onkeydown="if(event.keyCode==13){SiteSearch('<%linkurl("search")%>', '#keywords');return false};" placeholder="输入回车搜索" x-webkit-speech="" />
                     <input class="submit" type="submit" onclick="SiteSearch('<%linkurl("search")%>', '#keywords');" value="搜索" style="border:none; background:none;"/>
-                </div>
+                </div>-->
             </div>
         </div>
         <div class="logo">
@@ -17,11 +17,12 @@
         <div class="head_r">
             <ul>
                 <li class="active"><a href="<%linkurl("index")%>" title="首 页">首 页</a></li>
-                <li><a href="<%linkurl("about")%>" title="公司概况">公司概况</a></li>
-                <li><a href="<%linkurl("newscenter")%>" title="新闻中心">新闻中心</a></li>
-                <li><a href="<%linkurl("achieve")%>" title="经典业绩">经典业绩</a></li>
-                <li><a href="<%linkurl("culture")%>" title="企业文化">企业文化</a></li>
-                <li><a href="<%linkurl("server")%>" title="客户服务">客户服务</a></li>
+                <li><a href="<%linkurl("about_list",65)%>" title="公司概况">公司概况</a></li>
+                <li><a href="<%linkurl("newscenter_list",52)%>" title="新闻中心">新闻中心</a></li>
+                <li><a href="<%linkurl("mes_list",53)%>" title="招标信息">招标信息</a></li>
+                <li><a href="<%linkurl("achieve_list",60)%>" title="经典业绩">经典业绩</a></li>
+                <li><a href="<%linkurl("culture_list",57)%>" title="企业文化">企业文化</a></li>
+                <li><a href="<%linkurl("server_list",61)%>" title="客户服务">客户服务</a></li>
             </ul>
         </div>
     </div>
@@ -29,6 +30,16 @@
 <script>
     $(function(){
         startTime();
+        var href = window.location.href,host = window.location.host;
+        $('.head_r ul li').each(function () {
+            itemhref = $(this).children('a').attr('href');
+            itemhref = itemhref.slice(host);
+            itemhref = itemhref.slice(0,itemhref.lastIndexOf('/'))
+           
+            if (href.indexOf(itemhref) > 1) {
+                $(this).addClass('active').siblings().removeClass('active');
+            }
+        })
     })
     //获取当前系统日期
     function startTime()
